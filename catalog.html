@@ -7,7 +7,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic" rel="stylesheet">
   </head>
-  <body>
+  <body class="inner-page">
     <header class="main-header">
         <nav class="main-navigation">
             <a href="index.html" class="main-header-logo"><img src="img/logo-mini.png" width="111" height="24" alt="Логотип барбершопа «Бородинский»"></a>
@@ -15,7 +15,7 @@
                 <li><a href="#">Информация</a></li>
                 <li><a href="#">Новости</a></li>
                 <li><a href="#">Прайс-лист</a></li>
-                <li class="site-nav-active"><a href="#">Магазин</a></li>
+                <li class="site-nav-active"><a href="catalog.html">Магазин</a></li>
                 <li><a href="#">Контакты</a></li>
             </ul>
             <ul class="user-navigation">
@@ -35,7 +35,7 @@
             <form action="http://echo.htmlacademy.ru" method="get" class="filter">
                 <fieldset>
                     <legend>Производители:</legend>
-                    <ul>
+                    <ul class="filter-options">
                         <li class="filter-option">
                             <input id="baxter-of-california" class="filter-input filter-input-checkbox" type="checkbox" name="baxter-of-california" checked>
                             <label for="baxter-of-california">Baxter of California</label>
@@ -64,7 +64,7 @@
                 </fieldset>
                 <fieldset>
                     <legend>Группы товаров:</legend>
-                    <ul>
+                    <ul class="filter-options">
                         <li class="filter-option">
                             <input id="shaving" type="radio" class="filter-input filter-input-radio" name="product-group" value="shaving">
                             <label for="shaving">Бритвенные принадлежности</label>
