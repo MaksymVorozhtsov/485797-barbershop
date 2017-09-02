@@ -28,10 +28,18 @@ a {
 }
 
 .main-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: 16px;
     line-height: 20px;
     color: #fff;
-    background: #000;
+}
+
+.main-header-logo {
+    order: 2;
+    width: 368px;
+    height: 153px;
 }
 
 .site-navigation,
@@ -46,6 +54,33 @@ a {
 .product-photos-preview, 
 .product-info-list {
     list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation-wrapper {
+    width: 100%;
+    margin-bottom: 60px;
+    background-color: #000;
+}
+
+.container {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.main-navigation-wrapper .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.site-navigation {
+    width: 620px;
+}
+
+.user-navigation {
+    width: 140px;
 }
 
 .site-navigation a,
@@ -60,6 +95,12 @@ a {
     background-color: #242424;
 }
 
+.site-navigation,
+.user-navigation {
+    display: flex;
+    justify-content: space-between;
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -71,7 +112,37 @@ a {
     overflow: hidden;
 }
 
+.features {
+    margin-top: 30px;
+    margin-bottom: 80px;
+}
+
+.features-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.features li {
+    width: 300px;
+}
+
+.main-columns {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 80px;
+    margin-bottom: 35px;
+}
+
+.news, .contacts {
+    width: 380px;
+}
+
+.gallery, .appointment {
+    width: 300px;
+}
+
 .news h2,
+.gallery h2,
 .contacts h2,
 .appointment h2,
 .modal h2 {
@@ -141,7 +212,33 @@ a {
     background-image: url(../img/pattern-dark.png);
     background-position: 0 0;
     background-repeat: repeat;
+    margin-top: 65px;
+    padding: 60px 0 40px 0;
 }
+
+.main-footer .container {
+    display: flex;
+}
+
+.footer-contacts,
+.footer-copy {
+    margin: 0;
+}
+
+.footer-contacts {
+    width: 320px;
+    margin-right: 80px;
+}
+
+.footer-social {
+    width: 150px;
+}
+
+.footer-copy {
+    width: 150px;
+    margin-left: auto;
+}
+
 
 .footer-contacts a {
     color: #fff;
@@ -165,6 +262,10 @@ a {
 .footer-copy .button:focus {
     color: #000;
     background-color: #fff;
+}
+
+.inner-page .main-footer {
+    margin-top: 45px;
 }
 
 .modal {
@@ -203,9 +304,40 @@ a {
     text-decoration: none;
 }
 
+.inner-page .main-header {
+    margin-bottom: 50px;
+    background-color: #000;
+}
+
+.inner-page .main-navigation .container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.inner-page .main-header-logo {
+    width: 111px;
+    height: 24px;
+    padding: 23px 20px;
+    order: 0;
+}
+
+.inner-page .user-navigation {
+    margin-left: auto;
+}
+
 .page-title {
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 0;
     font-size: 32px;
     line-height: 40px;
+}
+
+.breadcrumbs {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px;
 }
 
 .breadcrumbs a {
@@ -219,6 +351,15 @@ a {
 
 .breadcrumbs-current {
     color: #aba9a7;
+}
+
+.catalogue-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filters {
+    width: 180px;
 }
 
 .filter fieldset {
@@ -245,9 +386,26 @@ a {
     opacity: 0.5;
 }
 
+.catalog {
+    width: 700px;
+}
+
+.catalog-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
 .catalog-item {
     background-color: #f8f8f8;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.catalog-item:nth-child(3n) {
+    margin-right: 0;
 }
 
 .catalog-item:hover {
@@ -281,6 +439,16 @@ a {
     color: #fff;
 }
 
+.pagination-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.pagination-item {
+    margin-right: 15px;
+}
+
 .pagination-item a {
     color: #fff;
     background-color: #000;
@@ -298,6 +466,27 @@ a {
 .pagination-item-active a:active {
     color: #000;
     background-color: #fff;
+}
+
+.product-photos {
+    width: 460px;
+}
+
+.product-info {
+    width: 390px;
+}
+
+.product-photos-preview {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.product-photos-preview li {
+    margin-right: 20px;
+}
+
+.product-photos-preview:nth-child(3n) {
+    margin-right: 0;
 }
 
 .product-photos-preview li,
