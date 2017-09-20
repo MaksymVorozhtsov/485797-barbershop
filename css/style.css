@@ -27,6 +27,11 @@ a {
     text-decoration: none;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .main-navigation {
     display: flex;
     flex-direction: column;
@@ -75,16 +80,20 @@ a {
     justify-content: space-between;
 }
 
+.site-navigation,
+.user-navigation {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .site-navigation {
     width: 620px;
 }
 
-.user-navigation {
-    width: 140px;
-}
-
 .site-navigation a,
 .user-navigation a {
+    display: block;
+    padding: 25px 20px;
     color: #fff;
 }
 
@@ -95,10 +104,29 @@ a {
     background-color: #242424;
 }
 
-.site-navigation,
-.user-navigation {
-    display: flex;
-    justify-content: space-between;
+.user-navigation .login-link {
+    position: relative;
+    max-width: 140px;
+    padding-left: 50px;
+}
+
+.login-link::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 18px;
+    background-image: url("../img/login.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    top: 29px;
+    left: 24px;
+    opacity: 0.3;
+}
+
+.login-link:hover::before,
+.login-link:focus::before,
+.login-link:active::before {
+    opacity: 1;
 }
 
 .visually-hidden {
@@ -126,13 +154,6 @@ a {
     width: 300px;
 }
 
-.main-columns {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 80px;
-    margin-bottom: 35px;
-}
-
 .news, .contacts {
     width: 380px;
 }
@@ -151,34 +172,57 @@ a {
     text-transform: uppercase;
 }
 
-.feature-item h3 {
-    font-size: 30px;
-    line-height: 42px; 
-    text-transform: uppercase; 
-}
-
 .feature-item {
     text-align: center;
 }
 
+.feature-item h3 {
+    position: relative;
+    font-size: 30px;
+    line-height: 42px; 
+    margin-bottom: 60px;
+    text-transform: uppercase; 
+}
+
+.feature-item h3::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: -35px;
+    left: 50%;
+    margin-left: -10px;
+    background-color: #fff;
+    transform: rotate(45deg);
+}
+
+.feature-item p {
+    margin: 0 10px;
+}
+
 .main-columns {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 80px;
+    margin-bottom: 35px;
     color: #000;
     background-color: #f8f5f2;
-    background-image: url(../img/pattern-light.png);
-    background-position: 0 0;
-    background-repeat: repeat;
+    background-image: 
+        url(../img/box-shadow.png),
+        url(../img/pattern-light.png);
+    background-position: center, 0 0;
+    background-repeat: no-repeat, repeat;
 }
 
-.news-item time {
-    text-transform: none;
-}
-
-.gallery-content {
-    background-color: #ccc;
-    border: 7px solid #fff;
+.main-columns h2 {
+    margin: 0;
+    margin-bottom: 25px;
 }
 
 .button {
+    display: inline-block;
+    padding: 10px 30px;
+    margin-right: 16px;
     font: inherit;
     text-align: center;
     color: #fff;
@@ -195,7 +239,94 @@ a {
     background-color: #663d15; 
 }
 
+.button.disabled,
+.button:disabled {
+    cursor: default;
+    opacity: 0.5;
+    background-color: #000;
+}
+
+.news-list {
+    margin-bottom: 25px;
+}
+
+.news-item {
+    margin-bottom: 25px;
+}
+
+.news-item p {
+    margin: 0;
+}
+
+.news-item time {
+    text-transform: none;
+}
+
+.gallery-container {
+    height: 260px;
+    position: relative;
+}
+
+.gallery-content {
+    height: 164px;
+    margin: 0;
+    background-color: #ccc;
+    border: 7px solid #fff;
+}
+
+.gallery-content img {
+    width: 286px;
+    height: 164px;
+}
+
+.gallery-button {
+    box-sizing: border-box;
+    width: 140px;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+}
+
+.gallery-button-back {
+    left: 0;
+}
+
+.gallery-button-next {
+    right: 0;
+}
+
+.contacts p {
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+.appointment-info {
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.appointment-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.appointment-item {
+    width: 140px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.appointment-item label {
+    display: block;
+    margin-bottom: 9px;
+    margin-left: 15px;
+}
+
 .appointment-item input {
+    box-sizing: border-box;
+    width: 140px;
+    padding: 8px 15px 7px;
     font: inherit;
     background-color: transparent;
     border: 2px solid #000;
@@ -206,6 +337,13 @@ a {
     outline: none;
 }
 
+.appointment .button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-right: 0;
+}
+
 .main-footer {
     color: #fff;
     background-color: #212121;
@@ -213,7 +351,7 @@ a {
     background-position: 0 0;
     background-repeat: repeat;
     margin-top: 65px;
-    padding: 60px 0 40px 0;
+    padding: 50px 0 40px 0;
 }
 
 .main-footer .container {
@@ -232,6 +370,15 @@ a {
 
 .footer-social {
     width: 150px;
+}
+
+.footer-social ul {
+    display: flex;
+    width: 141px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .footer-copy {
@@ -254,8 +401,34 @@ a {
     text-align: center;
 }
 
+.footer-social b,
+.footer-copy b {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.footer-copy .button {
+    display: block;
+    margin-right: 0;
+}
+
 .social-button {
-    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43px;
+    height: 43px;
+    background-color: #000;
+}
+
+.social-button:hover,
+.social-button:focus {
+    background-color: #fff;
+}
+
+.social-button:hover path,
+.social-button:focus path {
+    fill: #000;
 }
 
 .footer-copy .button:hover,
@@ -274,6 +447,7 @@ a {
     background-image: url(../img/pattern-light.png);
     background-position: 0 0;
     background-repeat: repeat;
+    display: none;
 }
 
 .login-form input[type="text"],
